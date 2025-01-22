@@ -75,14 +75,14 @@ export default async function RootLayout({
 		<Flex
 			as="html" lang="en"
 			background="page"
-			data-theme="dark"
-			data-brand="blue"
-			data-accent="cyan"
-			data-neutral="sand"
-			data-border="playful"
-			data-solid="color"
-			data-solid-style="plastic"
-			data-surface="translucent"
+			data-theme="light"
+			data-brand="violet"
+			data-accent="blue"
+			data-neutral="slate"
+			data-border="conservative"
+			data-solid="contrast"
+			data-solid-style="flat"
+			data-surface="filled"
 			data-transition="all"
 			className={classNames(
 				primary.variable,
@@ -128,10 +128,10 @@ export default async function RootLayout({
 						display: effects.lines.display,
 						opacity: effects.lines.opacity as any
 					}} />
-				<Flex
+				{/* <Flex
 					fillWidth
 					minHeight="16">
-				</Flex>
+				</Flex> */}
 				<Header />
 				<Flex
 					position="relative"

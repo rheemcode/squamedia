@@ -1,12 +1,52 @@
 import React from 'react';
 
-import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column, Card, Row, Grid, Icon, GlitchFx, TiltFx, LetterFx } from '@/once-ui/components';
+import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column, Card, Row, Grid, Icon, GlitchFx, TiltFx, LetterFx, Background, Input } from '@/once-ui/components';
 import { Projects } from '@/components/work/Projects';
 
 import { baseURL, routes } from '@/app/resources';
 import { home, about, person, newsletter } from '@/app/resources/content';
 import { Mailchimp } from '@/components';
 import { Posts } from '@/components/blog/Posts';
+import styles from './Style.module.scss'
+import { error } from 'console';
+
+const fx = {
+	effects: {
+		mask: {
+			cursor: false,
+			x: 100,
+			y: 0,
+			radius: 100
+		},
+		gradient: {
+			display: true,
+			x: 100,
+			y: 50,
+			width: 100,
+			height: 100,
+			tilt: -45,
+			colorStart: 'accent-background-strong',
+			colorEnd: 'static-transparent',
+			opacity: 100
+		},
+		dots: {
+			display: false,
+			size: 24,
+			color: 'brand-on-background-weak',
+			opacity: 100
+		},
+		lines: {
+			display: false,
+			color: 'neutral-alpha-weak',
+			opacity: 100
+		},
+		grid: {
+			display: true,
+			color: 'neutral-alpha-weak',
+			opacity: 100
+		}
+	}
+}
 
 export async function generateMetadata() {
 	const title = home.title;
@@ -40,7 +80,7 @@ export async function generateMetadata() {
 export default function Home() {
 	return (
 		<Column
-			maxWidth="m" gap="xl"
+			maxWidth="l" gap="xl"
 			alignItems="center">
 
 
@@ -72,19 +112,17 @@ export default function Home() {
 						<Button
 							id="about"
 							data-border="rounded"
-							href="/about"
+							href="https://discord.com/invite/5EyAQ4eNdS"
+
 							variant="secondary"
-							size="m"
+							size="l"
 							arrowIcon>
-							<Flex
-								gap="8"
-								alignItems="center">
-								Learn more
-							</Flex>
+							GET A PROPOSAL
+
 						</Button>
 					</RevealFx>
 				</Column>
-			</Column>
+			</Column >
 			<RevealFx translateY="16" delay={0.6}>
 				<Projects range={[1, 1]} />
 			</RevealFx>
@@ -96,7 +134,7 @@ export default function Home() {
 					<Heading
 						wrap="balance"
 						align='center'
-						onBackground='accent-weak'
+						onBackground='accent-strong'
 						variant="display-strong-l">
 						Not your average website – Expect Big things.
 					</Heading>
@@ -111,24 +149,26 @@ export default function Home() {
 					</Column>
 				</Column>
 			</Column>
-			{routes['/blog'] && (
-				<Flex
-					fillWidth gap="24"
-					mobileDirection="column">
-					<Flex flex={1} paddingLeft="l">
-						<Heading
-							as="h2"
-							variant="display-strong-xs"
-							wrap="balance">
-							Latest from the blog
-						</Heading>
-					</Flex>
+			{
+				routes['/blog'] && (
 					<Flex
-						flex={3} paddingX="20">
-						<Posts range={[1, 2]} columns="2" />
+						fillWidth gap="24"
+						mobileDirection="column">
+						<Flex flex={1} paddingLeft="l">
+							<Heading
+								as="h2"
+								variant="display-strong-xs"
+								wrap="balance">
+								Latest from the blog
+							</Heading>
+						</Flex>
+						<Flex
+							flex={3} paddingX="20">
+							<Posts range={[1, 2]} columns="2" />
+						</Flex>
 					</Flex>
-				</Flex>
-			)}
+				)
+			}
 
 			<Column
 				fillWidth
@@ -412,8 +452,10 @@ export default function Home() {
 									variant="heading-strong-xs"
 									wrap="balance"
 									align='center'
+									style={{ lineHeight: 1.5 }}
 
-									>
+
+								>
 									Custom Design
 								</Text>
 								<Column paddingTop='xs'>
@@ -421,6 +463,8 @@ export default function Home() {
 										variant="label-default-s"
 										onBackground='neutral-weak'
 										align='center'
+										style={{ lineHeight: 1.5 }}
+
 
 									>
 										No templates, just bespoke websites tailored to your needs.
@@ -445,14 +489,14 @@ export default function Home() {
 							background='accent-weak'
 							direction="column"
 						>
-							
+
 							<Column fillWidth>
 								<Text
 									as="h2"
 									variant="heading-strong-xs"
 									wrap="balance"
 									align='center'
-									>
+								>
 									Responsive Design
 								</Text>
 								<Column paddingTop='xs'>
@@ -492,7 +536,7 @@ export default function Home() {
 									wrap="balance"
 									align='center'
 
-									>
+								>
 									Conversion-Focused
 								</Text>
 								<Column paddingTop='xs'>
@@ -500,6 +544,8 @@ export default function Home() {
 										variant="label-default-s"
 										onBackground='neutral-weak'
 										align='center'
+										style={{ lineHeight: 1.5 }}
+
 
 									>
 										Every site we build is optimized for user engagement and conversion, ensuring you get the most out of your online presence.
@@ -530,7 +576,7 @@ export default function Home() {
 									variant="heading-strong-xs"
 									wrap="balance"
 									align='center'
-									>
+								>
 
 									Affordable Packages
 								</Text>
@@ -552,10 +598,331 @@ export default function Home() {
 				</Row>
 			</Column>
 
+			<Column
+				fillWidth
+			>
+				<Flex fillWidth alignItems='flex-start'>
+					{/* <Heading
+						as="h2"
+						align='left'
+						variant="display-strong-xs"
+					>
+						Our process
+					</Heading> */}
+				</Flex>
 
-			{newsletter.display &&
-				<Mailchimp newsletter={newsletter} />
-			}
-		</Column>
+				<Column paddingY='l' fillWidth>
+					<RevealFx
+						speed="slow"
+						delay={0}
+						translateY={13}
+						trigger
+					>
+						<Grid gap='l' mobileColumns={1} columns={2}>
+							<Column gap='l'>
+								<Column gap="m" justifyContent='flex-start' alignItems='flex-start'>
+									<Heading
+										as="h2"
+										variant="heading-strong-xl"
+										wrap="balance">
+										Why do I need a new website?
+									</Heading>
+									<Column
+
+									>
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											style={{ lineHeight: 1.5 }}
+
+											variant="label-default-xl">
+											Your website is the digital face of your business, and a modern, well-designed site is essential for various reasons. We all know first impressions count and a professionally built modern site builds trust immediately, whilst also ensuring a seamless experience across devices, enhancing user satisfaction and improving search engine rankings.
+										</Text>
+
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											marginTop='xs'
+											style={{ lineHeight: 1.5 }}
+
+											variant="label-default-xl">
+											A new website also allows you to realign your online presence with your evolving brand identity and stay competitive by adopting the latest web technologies. Invest in a new website and power your business forward with a modern, high-performing online presence!
+										</Text>
+									</Column>
+								</Column>
+								<Column gap="m" justifyContent='flex-start' alignItems='flex-start'>
+									<Heading
+										as="h2"
+										variant="heading-strong-xl"
+										wrap="balance">
+										Which web platform should I choose?
+									</Heading>
+									<Column
+
+									>
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											style={{ lineHeight: 1.5 }}
+											variant="label-default-xl">
+											As experts in web design, we understand the importance of selecting the right website platform tailored to your specific needs. The choice of a website platform depends on various factors, including your business goals, functionality requirements, and scalability. We are well-versed in working with a diverse range of platforms, such as WordPress, Shopify, Magento and more, and our experienced team will be happy to guide you in selecting the one that aligns seamlessly with your business objectives.
+
+
+										</Text>
+
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											style={{ lineHeight: 1.5 }}
+											marginTop='xs'
+											variant="label-default-xl">
+											Rest assured, we’ll deliver you a stunning website, that works the way you need it to, regardless of the platform you choose!
+										</Text>
+									</Column>
+								</Column>
+								<Column gap="m" justifyContent='flex-start' alignItems='flex-start'>
+									<Heading
+										as="h2"
+										variant="heading-strong-xl"
+										wrap="balance">
+										How can I trust your agency to deliver a high-quality website?
+									</Heading>
+									<Column
+
+									>
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											className='l-2'
+											style={{ lineHeight: 1.5 }}
+
+											variant="label-default-xl">
+											We have a proven track record of successful projects and satisfied clients. We’re happy to share case studies and testimonials to demonstrate our reliability and the quality of our work.
+										</Text>
+									</Column>
+								</Column>
+								<Column gap="m" justifyContent='flex-start' alignItems='flex-start'>
+									<Heading
+										as="h2"
+										variant="heading-strong-xl"
+										wrap="balance">
+										Do you offer ongoing maintenance and support?
+									</Heading>
+									<Column
+
+									>
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											style={{ lineHeight: 1.5 }}
+
+											variant="label-default-xl">
+											We do indeed. We have many hosting and support packages that are designed to meet the requirements of all web project sizes, big and small.
+										</Text>
+									</Column>
+								</Column>
+							</Column>
+
+							<Column gap='l' >
+								<Column gap="m" justifyContent='flex-start' alignItems='flex-start'>
+									<Heading
+										as="h2"
+										variant="heading-strong-xl"
+										wrap="balance">
+										Which web platform should I choose?
+									</Heading>
+									<Column
+
+									>
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											style={{ lineHeight: 1.5 }}
+
+											variant="label-default-xl">
+											As experts in web design, we understand the importance of selecting the right website platform tailored to your specific needs. The choice of a website platform depends on various factors, including your business goals, functionality requirements, and scalability. We are well-versed in working with a diverse range of platforms, such as WordPress, Shopify, Magento and more, and our experienced team will be happy to guide you in selecting the one that aligns seamlessly with your business objectives.
+
+
+										</Text>
+
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											marginTop='xs'
+											style={{ lineHeight: 1.5 }}
+
+											variant="label-default-xl">
+											Rest assured, we’ll deliver you a stunning website, that works the way you need it to, regardless of the platform you choose!
+										</Text>
+									</Column>
+								</Column>
+								<Column gap="m" justifyContent='flex-start' alignItems='flex-start'>
+									<Heading
+										as="h2"
+										variant="heading-strong-xl"
+										wrap="balance">
+										Why should we choose professional web design over using a website builder?
+									</Heading>
+									<Column
+
+									>
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											style={{ lineHeight: 1.5 }}
+
+											variant="label-default-xl">
+											Professional web design offers a level of customisation, expertise, and support that website builders can’t match. Our team ensures your website is tailored to your brand, optimised for search engines, and designed to meet your specific business objectives.
+
+
+										</Text>
+
+
+									</Column>
+								</Column>
+								<Column gap="m" justifyContent='flex-start' alignItems='flex-start'>
+									<Heading
+										as="h2"
+										variant="heading-strong-xl"
+										wrap="balance">
+										Can I have input during the design process?
+									</Heading>
+									<Column
+
+									>
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											style={{ lineHeight: 1.5 }}
+
+											variant="label-default-xl">
+											Definitely. Client collaboration is crucial to our process. We encourage feedback at all stages to ensure the final product meets your expectations and needs.
+
+
+										</Text>
+
+
+									</Column>
+								</Column>
+								<Column gap="m" justifyContent='flex-start' alignItems='flex-start'>
+									<Heading
+										as="h2"
+										variant="heading-strong-xl"
+										wrap="balance">
+										How long will it take to build my website?
+									</Heading>
+									<Column
+
+									>
+										<Text
+											wrap="balance"
+											onBackground="neutral-weak"
+											align='left'
+											style={{ lineHeight: 1.5 }}
+
+											variant="label-default-xl">
+											The length of time it takes to build a website depends entirely on the scope and scale of the project, whether you have your content already created, and a few other factors. Providing an exact timescale can therefore be tricky, but it usually takes a couple of months.
+										</Text>
+
+
+									</Column>
+								</Column>
+							</Column>
+						</Grid>
+					</RevealFx>
+				</Column>
+			</Column>
+
+
+			<Flex
+				style={{ overflow: 'hidden' }}
+				position="relative"
+				maxWidth={"s"}
+				fillWidth padding="xl" radius="l" marginBottom="m"
+				direction="column" alignItems="center" align="center"
+				background="surface" border="neutral-medium" >
+				<Flex
+					fill
+					minHeight={16}
+					position="absolute"
+					top='0'
+					radius="l"
+				>
+					<Background
+						position="absolute"
+						mask={{
+							cursor: false
+						}}
+						gradient={{
+							colorEnd: 'static-transparent',
+							colorStart: 'accent-solid-strong',
+							display: true,
+							height: 100,
+							opacity: 60,
+							tilt: 50,
+							width: 150,
+							x: 0,
+							y: 0
+						}}
+						dots={{
+							color: 'accent-on-background-medium',
+							display: false,
+							opacity: 100,
+							size: '64'
+						}}
+						grid={{
+							color: 'neutral-alpha-medium',
+							display: true,
+							height: 'var(--static-space-32)',
+							opacity: 10,
+							width: 'var(--static-space-32)'
+						}}
+						lines={{
+							display: false,
+							opacity: 100,
+							size: '24'
+						}}
+					/>
+				</Flex>
+				<Heading style={{ position: 'relative' }}
+					marginBottom="s"
+					variant="display-strong-xs">
+					Whenever you're ready:
+					<Flex onBackground='accent-weak'>
+						Let's talk about your project.
+					</Flex>
+				</Heading>
+				<Text
+					style={{
+						position: 'relative',
+						maxWidth: 'var(--responsive-width-xs)'
+					}}
+					wrap="balance"
+					marginBottom="l"
+					onBackground="neutral-medium">
+				</Text>
+				<Button
+					id="about"
+					data-border="rounded"
+					href="./proposal"
+					variant="secondary"
+					size="l"
+					arrowIcon>
+					GET A PROPOSAL
+
+				</Button>
+
+			</Flex>
+		</Column >
 	);
 }
