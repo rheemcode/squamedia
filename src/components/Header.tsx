@@ -76,11 +76,15 @@ export const Header = () => {
                     paddingLeft="32"
                     paddingY="20"
                 >
-                    <Text
+                    <Logo iconSrc="./images/logo-icon.png" wordmarkSrc="./images/logo-wordmark.png"  size="l" wordmark={true} href="."></Logo>
+                    {/* <Text
+
                         align="center"
                         wrap="balance"
                         variant="heading-strong-xl"
-                    >SquaMedia</Text>
+                    >
+                        SquaMedia
+                    </Text> */}
                     {/* <Logo size="l" icon={false} href="." /> */}
 
 

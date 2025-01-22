@@ -80,10 +80,9 @@ export async function generateMetadata() {
 export default function Home() {
 	return (
 		<Column
+			paddingTop='xl'
 			maxWidth="l" gap="xl"
 			alignItems="center">
-
-
 			<Column
 				fillWidth
 				paddingY="xl" gap="m">
@@ -112,7 +111,7 @@ export default function Home() {
 						<Button
 							id="about"
 							data-border="rounded"
-							href="https://discord.com/invite/5EyAQ4eNdS"
+							href="./proposal"
 
 							variant="secondary"
 							size="l"
@@ -150,26 +149,25 @@ export default function Home() {
 				</Column>
 			</Column>
 			{
-				routes['/blog'] && (
-					<Flex
-						fillWidth gap="24"
-						mobileDirection="column">
-						<Flex flex={1} paddingLeft="l">
-							<Heading
-								as="h2"
-								variant="display-strong-xs"
-								wrap="balance">
-								Latest from the blog
-							</Heading>
-						</Flex>
-						<Flex
-							flex={3} paddingX="20">
-							<Posts range={[1, 2]} columns="2" />
-						</Flex>
-					</Flex>
-				)
+				// routes['/blog'] && (
+				// 	<Flex
+				// 		fillWidth gap="24"
+				// 		mobileDirection="column">
+				// 		<Flex flex={1} paddingLeft="l">
+				// 			<Heading
+				// 				as="h2"
+				// 				variant="display-strong-xs"
+				// 				wrap="balance">
+				// 				Latest from the blog
+				// 			</Heading>
+				// 		</Flex>
+				// 		<Flex
+				// 			flex={3} paddingX="20">
+				// 			<Posts range={[1, 2]} columns="2" />
+				// 		</Flex>
+				// 	</Flex>
+				// )
 			}
-
 			<Column
 				fillWidth
 				paddingY='l' gap='m'
@@ -275,7 +273,6 @@ export default function Home() {
 
 				</Row>
 			</Column>
-
 			<Column
 				fillWidth
 			>
@@ -390,7 +387,6 @@ export default function Home() {
 					</RevealFx>
 				</Column>
 			</Column>
-
 			<Column
 				fillWidth
 				paddingY='l' gap='m'
@@ -597,7 +593,6 @@ export default function Home() {
 
 				</Row>
 			</Column>
-
 			<Column
 				fillWidth
 			>
@@ -842,8 +837,6 @@ export default function Home() {
 					</RevealFx>
 				</Column>
 			</Column>
-
-
 			<Flex
 				style={{ overflow: 'hidden' }}
 				position="relative"
@@ -919,7 +912,6 @@ export default function Home() {
 					size="l"
 					arrowIcon>
 					GET A PROPOSAL
-
 				</Button>
 
 			</Flex>
