@@ -63,11 +63,11 @@ export default function Proposal() {
 
                                 align='left'
                                 variant="heading-default-l">
-                                I want to:
+                                What kind of service are you looking for?
                             </Text>
                             <Column marginTop='s' gap='m'>
                                 <Checkbox
-                                    label="Scale my development team"
+                                    label="E-commerce website"
                                     description="Please read and accept the terms and conditions"
                                     // onToggle={onToggle}
                                     iconButtonProps={{
@@ -77,7 +77,7 @@ export default function Proposal() {
                                     }}
                                 />
                                 <Checkbox
-                                    label="Build my digital product from scratch"
+                                    label="Business website"
                                     description="Please read and accept the terms and conditions"
                                     // onToggle={onToggle}
                                     iconButtonProps={{
@@ -87,7 +87,17 @@ export default function Proposal() {
                                     }}
                                 />
                                 <Checkbox
-                                    label="Mordernize existing application"
+                                    label="Web Re-design"
+                                    description="Please read and accept the terms and conditions"
+                                    // onToggle={onToggle}
+                                    iconButtonProps={{
+                                        onClick: (e) => { },
+                                        tooltip: 'Learn more',
+                                        tooltipPosition: 'top'
+                                    }}
+                                />
+                                <Checkbox
+                                    label="Other"
                                     description="Please read and accept the terms and conditions"
                                     // onToggle={onToggle}
                                     iconButtonProps={{
