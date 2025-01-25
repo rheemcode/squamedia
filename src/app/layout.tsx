@@ -17,14 +17,17 @@ export async function generateMetadata() {
 		metadataBase: new URL(`https://www.squamedia.com`),
 		title: "Web Development Agency & Services: Professional Engaging Websites",
 		description: home.description,
-		openGraph: {
-			title: `Web Development Agency & Services: Professional Engaging Websites`,
-			description: 'Choose Squamedia if you want a responsive website that will exceed your expectations, bring joy to users and more importantly gets real results - experts in web design.',
-			url: baseURL,
-			siteName: `Web Development Agency & Services: Professional Engaging Websites`,
-			locale: 'en_US',
-			type: 'website',
+		twitter: {
+			card: "summary_large_image"
 		},
+		// openGraph: {
+		// 	title: `Web Development Agency & Services: Professional Engaging Websites`,
+		// 	description: 'Choose Squamedia if you want a responsive website that will exceed your expectations, bring joy to users and more importantly gets real results - experts in web design.',
+		// 	url: baseURL,
+		// 	siteName: `Web Development Agency & Services: Professional Engaging Websites`,
+		// 	locale: 'en_US',
+		// 	type: 'website',
+		// },
 		robots: {
 			index: true,
 			follow: true,
