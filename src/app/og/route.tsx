@@ -48,13 +48,13 @@ export async function GET(request: Request) {
                             alignItems: 'center',
                             gap: '5rem'
                         }}>
-                        <img src={'https://' + baseURL + person.avatar}
+                        <img src={'https://' + baseURL + "opengraph_image.png"}
                             style={{
                                 width: '12rem',
                                 height: '12rem',
                                 objectFit: 'cover',
                                 borderRadius: '100%',
-                            }}/>
+                            }} />
                         <div
                             style={{
                                 display: 'flex',
@@ -94,7 +94,7 @@ export async function GET(request: Request) {
                     data: fontData,
                     style: 'normal',
                 },
-              ],
+            ],
         }
     )
 }
