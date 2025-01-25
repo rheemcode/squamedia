@@ -61,12 +61,12 @@ export async function generateMetadata() {
 			description,
 			type: 'website',
 			url: `https://${baseURL}`,
-			images: [
-				{
-					url: ogImage,
-					alt: title,
-				},
-			],
+			// images: [
+			// 	{
+			// 		url: ogImage,
+			// 		alt: title,
+			// 	},
+			// ],
 		},
 		twitter: {
 			card: 'summary_large_image',

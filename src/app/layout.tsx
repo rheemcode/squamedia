@@ -12,32 +12,32 @@ import { Source_Code_Pro } from 'next/font/google';
 import { person, home } from '@/app/resources/content';
 import { Background, Flex } from "@/once-ui/components";
 
-// export async function generateMetadata() {
-// 	return {
-// 		metadataBase: new URL(`https://${baseURL}`),
-// 		title: home.title,
-// 		description: home.description,
-// 		openGraph: {
-// 			title: `${person.firstName}'s Portfolio`,
-// 			description: 'Portfolio website showcasing my work.',
-// 			url: baseURL,
-// 			siteName: `${person.firstName}'s Portfolio`,
-// 			locale: 'en_US',
-// 			type: 'website',
-// 		},
-// 		robots: {
-// 			index: true,
-// 			follow: true,
-// 			googleBot: {
-// 				index: true,
-// 				follow: true,
-// 				'max-video-preview': -1,
-// 				'max-image-preview': 'large',
-// 				'max-snippet': -1,
-// 			},
-// 		},
-// 	}
-// };
+export async function generateMetadata() {
+	return {
+		metadataBase: new URL(`https://www.squamedia.com`),
+		title: "Web Development Agency & Services: Professional Engaging Websites",
+		description: home.description,
+		openGraph: {
+			title: `Web Development Agency & Services: Professional Engaging Websites`,
+			description: 'Choose Squamedia if you want a responsive website that will exceed your expectations, bring joy to users and more importantly gets real results - experts in web design.',
+			url: baseURL,
+			siteName: `Web Development Agency & Services: Professional Engaging Websites`,
+			locale: 'en_US',
+			type: 'website',
+		},
+		robots: {
+			index: true,
+			follow: true,
+			googleBot: {
+				index: true,
+				follow: true,
+				'max-video-preview': -1,
+				'max-image-preview': 'large',
+				'max-snippet': -1,
+			},
+		},
+	}
+};
 
 const primary = Inter({
 	variable: '--font-primary',
