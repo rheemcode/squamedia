@@ -62,14 +62,7 @@ export async function sendContactForm(prevState: any, data: FormData) {
                                 "Email": "hello@squamedia.com",
                                 "Name": "Squamedia"
                             },
-                            {
-                                "Email": "johnmoh787@gmail.com",
-                                "Name": "Squamedia"
-                            },
-                            {
-                                "Email": "oluwabless123@gmail.com",
-                                "Name": "Squamedia"
-                            }
+
                         ],
                         "Subject": "New proposal recieved",
                         "TextPart": `
