@@ -23,27 +23,14 @@ export const Footer = () => {
                         © {currentYear} /
                     </Text>
                     <Text paddingX="4">
-                        {person.name}
+                        squamedia
                     </Text>
                     <Text onBackground="neutral-weak">
                         {/* Usage of this template requires attribution. Please don't remove the link to Once UI. */}
                         {/* /Made with <SmartLink style={{ marginLeft: '-0.125rem' }} href="https://once-ui.com/templates/magic-portfolio">Once UI</SmartLink> */}
                     </Text>
                 </Text>
-                <Flex
-                    gap="16">
-                    {social.map((item) => (
-                        item.link && (
-                            <IconButton
-                                key={item.name}
-                                href={item.link}
-                                icon={item.icon}
-                                tooltip={item.name}
-                                size="s"
-                                variant="ghost" />
-                        )
-                    ))}
-                </Flex>
+               
             </Flex>
             <Flex height="80" show="s"></Flex>
         </Flex>
