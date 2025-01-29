@@ -8,21 +8,21 @@ import { formatDate } from '@/app/utils/formatDate';
 import ScrollToHash from '@/components/ScrollToHash';
 
 interface BlogParams {
-    params: {
-        slug: string;
-    };
+	params: {
+		slug: string;
+	};
 }
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-    const posts = getPosts(['src', 'app', 'blog', 'posts']);
-    return posts.map((post) => ({
-        slug: post.slug,
-    }));
+	const posts = getPosts(['src', 'app', 'blog', 'posts']);
+	return posts.map((post) => ({
+		slug: post.slug,
+	}));
 }
 
 export function generateMetadata({ params: { slug } }: BlogParams) {
 	let post = getPosts(['src', 'app', 'blog', 'posts']).find((post) => post.slug === slug)
-	
+
 	if (!post) {
 		return
 	}
@@ -54,7 +54,7 @@ export function generateMetadata({ params: { slug } }: BlogParams) {
 				},
 			],
 		},
-			twitter: {
+		twitter: {
 			card: 'summary_large_image',
 			title,
 			description,
@@ -63,7 +63,7 @@ export function generateMetadata({ params: { slug } }: BlogParams) {
 	}
 }
 
-export default function Blog({ params }: BlogParams) {
+export default function Blog({ params }: any) {
 	let post = getPosts(['src', 'app', 'blog', 'posts']).find((post) => post.slug === params.slug)
 
 	if (!post) {
@@ -71,8 +71,8 @@ export default function Blog({ params }: BlogParams) {
 	}
 
 	const avatars = post.metadata.team?.map((person) => ({
-        src: person.avatar,
-    })) || [];
+		src: person.avatar,
+	})) || [];
 
 	return (
 		<Flex as="section"
@@ -93,7 +93,7 @@ export default function Blog({ params }: BlogParams) {
 						image: post.metadata.image
 							? `https://${baseURL}${post.metadata.image}`
 							: `https://${baseURL}/og?title=${post.metadata.title}`,
-							url: `https://${baseURL}/blog/${post.slug}`,
+						url: `https://${baseURL}/blog/${post.slug}`,
 						author: {
 							'@type': 'Person',
 							name: person.name,
