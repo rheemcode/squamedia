@@ -35,7 +35,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             >
                 <Carousel
                     sizes="(max-width: 960px) 100vw, 960px"
-                    images={["/images/projects/project-01/azapay.png", "/images/projects/project-01/karazo.png"].map(image => ({
+                    images={["/images/projects/project-01/azapay.png", "/images/projects/project-01/project3.png"].map(image => ({
                         src: image,
                         alt: title
                     }))} />
