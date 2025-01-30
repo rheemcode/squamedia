@@ -2,7 +2,6 @@
 import React from 'react';
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column, Card, Row, Grid, Icon, GlitchFx, TiltFx, LetterFx, Background, Input, Checkbox, Textarea } from '@/once-ui/components';
-import { Projects } from '@/components/work/Projects';
 
 import { baseURL, routes } from '@/app/resources';
 import { home, about, person, newsletter } from '@/app/resources/content';
