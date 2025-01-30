@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation'
-import { CustomMDX } from '@/components/mdx'
 import { getPosts } from '@/app/utils/utils'
 import { AvatarGroup, Button, Flex, Heading, SmartImage, Text } from '@/once-ui/components'
 import { baseURL } from '@/app/resources';
@@ -132,7 +131,7 @@ export default function Blog({ params }: any) {
 				as="article"
 				direction="column"
 				fillWidth>
-				<CustomMDX source={post.content} />
+				{/* <CustomMDX source={post.content} />kxcc */}
 			</Flex>
 			<ScrollToHash />
 		</Flex>

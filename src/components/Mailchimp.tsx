@@ -2,7 +2,7 @@
 
 import { mailchimp } from '@/app/resources'
 import { Button, Flex, Heading, Input, Text, Background } from '@/once-ui/components';
-import { useState } from 'react';
+import { JSX, useState } from 'react';
 
 function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
     let timeout: ReturnType<typeof setTimeout>;

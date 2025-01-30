@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 
 import { SmartImage, SmartLink, Text } from '@/once-ui/components';
 import { CodeBlock } from '@/once-ui/modules';
-import { HeadingLink } from '@/components';
+// import { HeadingLink } from '@/components';
 
 import { TextProps } from '@/once-ui/interfaces';
 import { SmartImageProps } from '@/once-ui/components/SmartImage';
@@ -21,9 +21,9 @@ function Table({ data }: TableProps) {
     ));
     const rows = data.rows.map((row, index) => (
         <tr key={index}>
-        {row.map((cell, cellIndex) => (
-            <td key={cellIndex}>{cell}</td>
-        ))}
+            {row.map((cell, cellIndex) => (
+                <td key={cellIndex}>{cell}</td>
+            ))}
         </tr>
     ));
 
@@ -76,8 +76,8 @@ function createImage({ alt, src, ...props }: SmartImageProps & { src: string }) 
             aspectRatio="16 / 9"
             alt={alt}
             src={src}
-            {...props}/>
-        )
+            {...props} />
+    )
 }
 
 function slugify(str: string): string {
@@ -93,26 +93,20 @@ function slugify(str: string): string {
 
 function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6) {
     const CustomHeading = ({ children, ...props }: TextProps) => {
-    const slug = slugify(children as string);
+        const slug = slugify(children as string);
         return (
-            <HeadingLink
-                style={{marginTop: 'var(--static-space-24)', marginBottom: 'var(--static-space-12)'}}
-                level={level}
-                id={slug}
-                {...props}>
-                {children}
-            </HeadingLink>
+            <></>
         );
     };
-  
+
     CustomHeading.displayName = `Heading${level}`;
-  
+
     return CustomHeading;
 }
 
 function createParagraph({ children }: TextProps) {
     return (
-        <Text style={{lineHeight: '175%'}}
+        <Text style={{ lineHeight: '175%' }}
             variant="body-default-m"
             onBackground="neutral-medium"
             marginTop="8"
@@ -141,7 +135,7 @@ type CustomMDXProps = MDXRemoteProps & {
 };
 
 export function CustomMDX(props: CustomMDXProps) {
-    
+
     return (
         // @ts-ignore: Suppressing type error for MDXRemote usage
         <MDXRemote
