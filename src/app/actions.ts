@@ -66,6 +66,7 @@ export async function sendContactForm(prevState: any, data: FormData) {
                         ],
                         "Subject": "New proposal recieved",
                         "TextPart": `
+                        name: ${name},
                         email: ${email},
                         phone: ${phone},
                         message: ${message},
