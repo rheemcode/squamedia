@@ -20,48 +20,48 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 	}));
 }
 
-export function generateMetadata({ params: { slug } }: BlogParams) {
-	let post = getPosts(['src', 'app', 'blog', 'posts']).find((post) => post.slug === slug)
+// export function generateMetadata({ params: { slug } }: BlogParams) {
+// 	let post = getPosts(['src', 'app', 'blog', 'posts']).find((post) => post.slug === slug)
 
-	if (!post) {
-		return
-	}
+// 	if (!post) {
+// 		return
+// 	}
 
-	let {
-		title,
-		publishedAt: publishedTime,
-		summary: description,
-		images,
-		image,
-		team,
-	} = post.metadata
-	let ogImage = image
-		? `https://${baseURL}${image}`
-		: `https://${baseURL}/og?title=${title}`;
+// 	let {
+// 		title,
+// 		publishedAt: publishedTime,
+// 		summary: description,
+// 		images,
+// 		image,
+// 		team,
+// 	} = post.metadata
+// 	let ogImage = image
+// 		? `https://${baseURL}${image}`
+// 		: `https://${baseURL}/og?title=${title}`;
 
-	return {
-		title,
-		description,
-		openGraph: {
-			title,
-			description,
-			type: 'article',
-			publishedTime,
-			url: `https://${baseURL}/blog/${post.slug}`,
-			images: [
-				{
-					url: ogImage,
-				},
-			],
-		},
-		twitter: {
-			card: 'summary_large_image',
-			title,
-			description,
-			images: [ogImage],
-		},
-	}
-}
+// 	return {
+// 		title,
+// 		description,
+// 		openGraph: {
+// 			title,
+// 			description,
+// 			type: 'article',
+// 			publishedTime,
+// 			url: `https://${baseURL}/blog/${post.slug}`,
+// 			images: [
+// 				{
+// 					url: ogImage,
+// 				},
+// 			],
+// 		},
+// 		twitter: {
+// 			card: 'summary_large_image',
+// 			title,
+// 			description,
+// 			images: [ogImage],
+// 		},
+// 	}
+// }
 
 export default function Blog({ params }: any) {
 	let post = getPosts(['src', 'app', 'blog', 'posts']).find((post) => post.slug === params.slug)
