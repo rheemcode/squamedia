@@ -5,9 +5,6 @@ import { Projects } from '@/components/work/Projects';
 
 import { baseURL, routes } from '@/app/resources';
 import { home, about, person, newsletter } from '@/app/resources/content';
-import { Mailchimp } from '@/components';
-import { Posts } from '@/components/blog/Posts';
-import styles from './Style.module.scss'
 import { error } from 'console';
 
 const fx = {
