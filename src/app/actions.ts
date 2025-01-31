@@ -97,7 +97,7 @@ export async function sendContactForm(prevState: any, data: FormData) {
                             },
                         ],
 
-                        "TemplateID": 6682293,
+                        "TemplateID": 6689468,
                         "TemplateLanguage": true,
                         "Subject": "Your Digital Journey Starts Here | Squa media",
                         "Variables": {}
